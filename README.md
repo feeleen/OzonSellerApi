@@ -19,7 +19,7 @@ Usage examples:
 public async Task TestGetDeliveryMethodList()
 {
 	var result = await ApiService.GetDeliveryMethodListAsync(
-			new OzonSellerApi.Model.DeliveryMethodListParameters()
+			new DeliveryMethodListParameters()
 			{
 				Limit = 1,
 				Offset = 0,
