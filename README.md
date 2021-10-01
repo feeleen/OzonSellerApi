@@ -1,6 +1,6 @@
 [![Build status](https://ci.appveyor.com/api/projects/status/r23jiolwgvqqbb9e?svg=true)](https://ci.appveyor.com/project/feeleen/ozonsellerapi)
 
-#OzonSellerApi for .NET
+# OzonSellerApi for .NET
 
 Target Framework .NET 5.0
 
