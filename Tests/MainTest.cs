@@ -8,7 +8,13 @@ namespace Tests
 	[TestClass]
 	public class MainTest
 	{
-		public OzonSellerApiService ApiService { get { return OzonSellerApiService.Instance; } }
+		public static OzonSellerApiService ApiService { get { return OzonSellerApiService.Instance; } }
+
+		[AssemblyInitialize]
+		public static void AssemblyInit(TestContext context)
+		{
+			ApiService.Configure("https://api-seller.ozon.ru", "<your ApiKey>", "<your ClientId>");
+		}
 
 		[TestMethod]
 		public async Task TestGetDeliveryMethodList()

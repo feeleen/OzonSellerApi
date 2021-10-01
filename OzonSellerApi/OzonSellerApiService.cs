@@ -3,6 +3,7 @@ using OzonSellerApi.Interfaces;
 using OzonSellerApi.Model;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,8 +18,12 @@ namespace OzonSellerApi
 
 		private OzonSellerApiService()
 		{
-			// todo: init settings from config
-			Connection = new ApiConnection(@"https://api-seller.ozon.ru", "ApiKey", "ClientId");
+			Connection = new ApiConnection();
+		}
+
+		public void Configure(string baseApiUrl = null, string apiKey = null, string clientId = null)
+		{
+			Instance.Connection.Configure(baseApiUrl, apiKey, clientId);
 		}
 
 		public async Task<List<Warehouse>> GetWarehouseListAsync()

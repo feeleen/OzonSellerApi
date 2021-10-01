@@ -17,25 +17,28 @@ namespace OzonSellerApi
 		HttpClient client = new HttpClient();
 
 		/// <summary>
-		/// for example api-seller.ozon.ru
+		/// for example https://api-seller.ozon.ru
 		/// </summary>
-		public string BaseApiUrl { get; set; }
+		public string BaseApiUrl { get; private set; }
 
 		/// <summary>
 		/// ApiKey ?
 		/// </summary>
-		public string ApiKey { get; set; }
+		public string ApiKey { get; private set; }
 
 		/// <summary>
 		/// clientId ?
 		/// </summary>
-		public string ClientID { get; set; }
+		public string ClientID { get; private set; }
 
 
-		public ApiConnection(string baseApiUrl = null, string apiKey = null, string clientId = null)
+		public ApiConnection()
 		{
 			ServicePointManager.DefaultConnectionLimit = 5;
-			
+		}
+
+		public void Configure(string baseApiUrl = null, string apiKey = null, string clientId = null)
+		{
 			client.BaseAddress = new Uri(baseApiUrl);
 
 			//OZON specific:

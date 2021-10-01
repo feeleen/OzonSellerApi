@@ -9,9 +9,11 @@ namespace OzonSellerApi.Interfaces
 {
 	public interface IApiConnection
 	{
-		string BaseApiUrl { get; set; }
-		string ClientID { get; set; }
-		string ApiKey { get; set; }
+		string BaseApiUrl { get; }
+		string ClientID { get; }
+		string ApiKey { get; }
 		Task<HttpResponseMessage> PostRequestAsync(string jsonRequest, string apiRelativeUrl, HttpMethod method);
+
+		void Configure(string baseApiUrl = null, string apiKey = null, string clientId = null);
 	}
 }
