@@ -26,4 +26,27 @@ public async Task TestWarehousesList()
 	Assert.IsTrue(result.Count >= 0);
 }
 
+
+```
+
+
+Commands are desribed like this
+
+```cs
+
+[ApiGetCommand(Url = "/categories/tree", SchemaVersion = SchemaVersion.v1)]
+public class GetCategoryTreeCommand : ApiCommandBase<List<Category>>
+{
+}
+
+[ApiPostCommand(Url = "/warehouse/list")]
+public class GetWarehouseListCommand : ApiCommandBase<List<Warehouse>>
+{
+}
+
+[ApiPostCommand(Url = "/delivery-method/list")]
+public class GetDeliveryMethodListCommand : ApiCommandBase<List<DeliveryMethod>>
+{
+}
+
 ```
