@@ -23,7 +23,12 @@ public async Task TestGetDeliveryMethodList()
 			{
 				Limit = 1,
 				Offset = 0,
-				Filter = new OzonSellerApi.Model.DeliveryMethodListFilter() { ProviderId = 0, Status = DeliveryMethodStatus.ACTIVE, WarehouseId = null }
+				Filter = new DeliveryMethodListFilter() 
+				{ 
+					ProviderId = 0, 
+					Status = DeliveryMethodStatus.ACTIVE, 
+					WarehouseId = null 
+				}
 			});
 
 	Assert.IsTrue(result.Count >= 0);
