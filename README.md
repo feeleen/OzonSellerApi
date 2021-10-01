@@ -30,7 +30,7 @@ public async Task TestWarehousesList()
 ```
 
 
-Commands are desribed like this
+Command description
 
 ```cs
 
