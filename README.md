@@ -1,11 +1,16 @@
 Target Framework .NET 5.0
 
-Usage examples
-
+Initialization:
 ```cs
 
-public OzonSellerApiService ApiService { get { return OzonSellerApiService.Instance; } }
+var ApiService = OzonSellerApiService.Instance;
+ApiService.Configure("https://api-seller.ozon.ru", "<your ApiKey>", "<your ClientId>");
 
+```
+
+Usage examples:
+
+```cs
 [TestMethod]
 public async Task TestGetDeliveryMethodList()
 {
@@ -32,7 +37,7 @@ public async Task TestWarehousesList()
 ```
 
 
-Command description
+Command description:
 
 ```cs
 
