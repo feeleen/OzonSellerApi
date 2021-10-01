@@ -28,14 +28,14 @@ namespace OzonSellerApi.Commands
 		protected static JsonSerializerSettings SerializerSettings = new JsonSerializerSettings { TypeNameHandling = TypeNameHandling.None, NullValueHandling = NullValueHandling.Ignore };
 
 		[JsonIgnore]
-		private ApiCommandAttribute apiCommandAttribute;
+		private ApiCommandAttributeBase apiCommandAttribute;
 		[JsonIgnore]
-		private ApiCommandAttribute ApiCommandAttribute
+		private ApiCommandAttributeBase ApiCommandAttribute
 		{
 			get
 			{
 				if (apiCommandAttribute == null)
-					apiCommandAttribute = GetType().GetCustomAttribute<ApiCommandAttribute>(true);
+					apiCommandAttribute = GetType().GetCustomAttribute<ApiCommandAttributeBase>(true);
 
 				return apiCommandAttribute;
 			}
