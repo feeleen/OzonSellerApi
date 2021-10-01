@@ -1,3 +1,5 @@
+Target Framework .NET 5.0
+
 Usage examples
 
 ```cs
