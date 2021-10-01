@@ -67,4 +67,4 @@ public class GetDeliveryMethodListCommand : ApiCommandBase<List<DeliveryMethod>>
 
 ```
 
-There are still a lot commands to implement
+There are still a lot of things to do 
