@@ -7,10 +7,7 @@
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
     <PackageReference Include="NLog" Version="4.7.11" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\StringEnum\StringEnum.csproj" />
+    <PackageReference Include="StringEnum.Net" Version="1.0.0" />
   </ItemGroup>
 
 </Project>

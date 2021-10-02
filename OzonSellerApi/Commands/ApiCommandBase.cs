@@ -88,7 +88,7 @@ namespace OzonSellerApi.Commands
 			// response with errors
 			if (responseBase.Code != null && responseBase.Code.Length > 0)
 			{
-				throw new ApiException(responseBase.Message + ", " + string.Join(", ", responseBase.Details?.Select(item => "'" + item + "'")),
+				throw new ApiException(responseBase.Message + ", " + (responseBase.Details == null ? "" : string.Join(", ", responseBase.Details.Select(item => "'" + item + "'"))),
 					response.Content,
 					responseBase.Error);
 			}
