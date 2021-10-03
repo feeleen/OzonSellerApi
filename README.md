@@ -66,5 +66,22 @@ public class GetDeliveryMethodListCommand : ApiCommandBase<List<DeliveryMethod>>
 }
 
 ```
+OzonSellerApiService class wraps these commands:
+
+```cs
+public class OzonSellerApiService
+{
+	...
+	public async Task<List<Warehouse>> GetWarehouseListAsync()
+	{
+		var cmd = new GetWarehouseListCommand { Connection = Connection };
+		var result = await cmd.ExecuteAsync();
+
+		return result;
+	}
+	...		
+}
+```
+
 
 There are still a lot of things to do 
