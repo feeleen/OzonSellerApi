@@ -76,29 +76,6 @@ namespace OzonSellerApi
 				});
 		}
 
-		/// <summary>
-		/// Возвращает строковое значение, заданное в аттрибуте EnumValue. 
-		/// Если атрибут не задан - возращается значение ToString()
-		/// </summary>
-		public static string GetValue(this Enum x)
-		{
-			var enumType = x.GetType();
-			var memberInfos = enumType.GetMember(x.ToString());
-			var enumValueMemberInfo = memberInfos.FirstOrDefault(m => m.DeclaringType == enumType);
-			var valueAttributes =
-				  enumValueMemberInfo.GetCustomAttributes(typeof(EnumValueAttribute), false);
-
-			if (valueAttributes.Length > 0)
-			{
-				var oidRealValue = ((EnumValueAttribute)valueAttributes[0]).Value;
-				return oidRealValue;
-			}
-			else
-			{
-				return x.ToString();
-			}
-		}
-
 		public static T ToEnum<T>(this string value, T defaultValue) where T : struct
 		{
 			if (string.IsNullOrEmpty(value))
